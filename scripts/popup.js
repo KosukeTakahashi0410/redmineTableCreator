@@ -36,28 +36,28 @@ button.addEventListener('click', (e) => {
     resultArea.textContent = '値のいずれかが未入力です'
   }else{
     // ヘッダの作成
-  for (i = 0; i < headerNum; i ++) {
-    headerContent += '|_.  ';
-  }
-
-  // ヘッダの末尾を閉じる
-  headerContent += '|\n';
-  // 表要素の作成
-  for (j = 0; j < tableContentNum; j ++) {
-    // ヘッダー分追加
-    for (k = 0; k < headerNum; k ++) {
-      tableContent += '|  ';
+    for (i = 0; i < headerNum; i ++) {
+      headerContent += '|_.  ';
     }
-    // 表要素を閉じる
-    tableContent += '|\n';
-  }
 
-  // 表の作成
-  table = headerContent + tableContent;
-  // コピー実施
-  const copyResult = copyTable(table);
-  // コピー結果を表示
-  resultArea.textContent = copyResult? 'コピーに成功しました' : 'コピーに失敗しました'
+    // ヘッダの末尾を閉じる
+    headerContent += '|\n';
+    // 表要素の作成
+    for (j = 0; j < tableContentNum; j ++) {
+      // ヘッダー分追加
+      for (k = 0; k < headerNum; k ++) {
+        tableContent += '|  ';
+      }
+      // 表要素を閉じる
+      tableContent += '|\n';
+    }
+
+    // 表の作成
+    table = headerContent + tableContent;
+    // コピー実施
+    const copyResult = copyTable(table);
+    // コピー結果を表示
+    resultArea.textContent = copyResult? 'コピーに成功しました' : 'コピーに失敗しました'
   }
 
   // 3秒後メッセージを非表示にする
