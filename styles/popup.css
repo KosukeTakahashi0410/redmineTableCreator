@@ -1,0 +1,7 @@
+body {
+  width: 150px;
+}
+
+#headerNum, #contentNum {
+  width: 40px;
+}

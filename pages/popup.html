@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../styles/popup.css">
+  </head>
+  <body>
+    <span>1以上の値を入力して表生成</span>
+    <form>
+      <label for="headNum">ヘッダ数：</label>
+      <input type="number" value="1" step="1" min="1" name="headerNum" id="headerNum" required>
+      <br>
+      <label for="contentNum">表要素数：</label>
+      <input type="number" value="1" step="1" min="1" name="contentNum" id="contentNum" required>
+      <br>
+      <input type="submit" value="表をコピー" id="copyButton">
+    </form>
+    <span id="result"></span>
+    <script type="text/javascript" src="../scripts/popup.js"></script>
+  </body>
+</html>

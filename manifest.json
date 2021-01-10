@@ -1,0 +1,9 @@
+{
+  "manifest_version": 2,
+  "name": "CreateRedmineTable",
+  "version": "0.1",
+  "description": "Redmineの表をさくっと生成するのを作りたかった。Redmineは使いづらいので嫌いです。",
+  "browser_action": {
+    "default_popup": "pages/popup.html"
+  }
+}
