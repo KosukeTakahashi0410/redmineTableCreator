@@ -79,6 +79,10 @@ deviceCopyButton.addEventListener('click', e => {
   const copyResult = copyTable(deviceTemplate)
   // コピー結果の表示
   resultArea.textContent = copyResult? 'コピーに成功しました' : 'コピーに失敗しました'
+  // 3秒後メッセージを非表示にする
+  window.setTimeout(function() {
+    resultArea.textContent = ''
+  }, 3000)
 })
 
 /**
@@ -94,6 +98,10 @@ caseCopyButton.addEventListener('click', e => {
   const copyResult = copyTable(caseTemplate)
   // コピー結果の表示
   resultArea.textContent = copyResult? 'コピーに成功しました' : 'コピーに失敗しました'
+  // 3秒後メッセージを非表示にする
+  window.setTimeout(function() {
+    resultArea.textContent = ''
+  }, 3000)
 })
 
 /** 関数 */
