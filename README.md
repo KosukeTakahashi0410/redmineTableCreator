@@ -1,6 +1,6 @@
 ## RedmineTableCreator
-
-ver0.11
+ver0.11  
+![スクリーンショット 2021-01-10 23 53 06](https://user-images.githubusercontent.com/38649734/104126628-0265d400-53a1-11eb-9b39-895c1be8f698.png)
 ### 概要説明
 Redmineで表を作るときに面倒だったので作成  
 ヘッダー・表要素の必要な数を記載して作成ボタンを押下するとクリップボードにコピーされる  
