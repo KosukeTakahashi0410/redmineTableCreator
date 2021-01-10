@@ -1,6 +1,14 @@
-// ボタン要素を取得
+/** ボタン要素 */
+// コピーボタン要素を取得
 const button = document.getElementById('copyButton');
+// デバイステンプレートボタン要素を取得
+const deviceCopyButton = document.getElementById('browserCopyButton');
+// テストテンプレボタン要素を取得
+const caseCopyButton = document.getElementById('caseCopyButton');
+// 結果表示要素を取得
+const resultArea = document.getElementById('result');
 
+/** イベント */
 /**
  * 表作成・コピーのイベント
  * 入力値を元にヘッダーと表要素を作成してテーブルを作成する
@@ -14,8 +22,6 @@ button.addEventListener('click', (e) => {
   const headerNum = document.getElementById('headerNum').value;
   // 表要素の数取得
   const tableContentNum = document.getElementById('contentNum').value;
-  // 結果表示要素を取得
-  const resultArea = document.getElementById('result');
 
   /** 変数の定義 */
   // 表
@@ -60,6 +66,37 @@ button.addEventListener('click', (e) => {
   }, 3000)
 })
 
+/**
+ * デバイスのデフォルト文字列のコピー
+ * テンプレ文字列は面倒臭いのでそのまま関数内に入力してます
+ */
+deviceCopyButton.addEventListener('click', e => {
+  // デフォルトイベント（submitボタンで本来発生するフォーム送信）キャンセル
+  e.preventDefault();
+  // デバイスのテンプレ文字列
+  const deviceTemplate = '|_. デバイス |_. バージョン |\n| デバイス名 | xx.xx.xx |\n| デバイス名 | xx.xx.xx |\n| デバイス名 | xx.xx.xx |'
+  // デバイステンプレ文字列のコピー実行
+  const copyResult = copyTable(deviceTemplate)
+  // コピー結果の表示
+  resultArea.textContent = copyResult? 'コピーに成功しました' : 'コピーに失敗しました'
+})
+
+/**
+ * ケースのデフォルト文字列のコピー
+ * テンプレ文字列は面倒臭いのでそのまま関数内に入力してます
+ */
+caseCopyButton.addEventListener('click', e => {
+  // デフォルトイベント（submitボタンで本来発生するフォーム送信）キャンセル
+  e.preventDefault();
+  // デバイスのテンプレ文字列
+  const caseTemplate = '|_. No |_. 操作 |_. 期待値 |_. 結果PC |_. 結果SP |\n| 1 | 操作① | 期待値① |  |  |\n| 2 | 操作② | 期待値② |  |  |\n| 3 | 操作③ | 期待値③ |  |  |'
+  // デバイステンプレ文字列のコピー実行
+  const copyResult = copyTable(caseTemplate)
+  // コピー結果の表示
+  resultArea.textContent = copyResult? 'コピーに成功しました' : 'コピーに失敗しました'
+})
+
+/** 関数 */
 /**
  * クリップボードコピー関数
  * 一時的にtextareaを要素として追加、選択、コピーを行ってクリップボードに値を追加
