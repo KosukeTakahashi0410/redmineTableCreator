@@ -1,4 +1,4 @@
-/** ボタン要素 */
+/** html要素取得 */
 // コピーボタン要素を取得
 const button = document.getElementById('copyButton');
 // デバイステンプレートボタン要素を取得
